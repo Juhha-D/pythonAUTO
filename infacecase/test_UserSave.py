@@ -66,7 +66,8 @@ class Testuser:
             username=i['username']
             uerid=i['userId']
             if username== "自动化测试":
-                uerid1 = uerid
+                write_yaml({"uerid":i['userId']})
+                # uerid1 = uerid
                 # print(uerid1)
 
         assert res.status_code == 200
@@ -77,7 +78,7 @@ class Testuser:
 
         url = "http://rta-manage-sit.ing.mob.com/user/delete"
         data = {
-            "userId": uerid1
+            "userId": read_yaml("uerid")
         }
         headers = {
             "token": read_yaml("token")
