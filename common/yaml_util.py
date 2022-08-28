@@ -1,6 +1,8 @@
 
 import os
 import yaml
+
+#这个文件是为了将一些参数用这个方法来传
 #读取
 def read_yaml(key):
     with open(os.getcwd()+'/extract.yaml',encoding='utf-8') as f:
