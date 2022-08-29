@@ -11,7 +11,7 @@ class RequestUtil:
         if method == "get":
             res = RequestUtil.sess.request(method=method,url=url,params=datas,**kwargs)
         elif method =="post":
-            if datas:
+            if datas and isinstance(datas,dict):
                 datas = json.dumps(datas)
             res = RequestUtil.sess.request(method=method,url=url,data=datas,**kwargs)
         else:
